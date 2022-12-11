@@ -12,11 +12,13 @@ public class Main {
     public static int difficulty;
     static Actividad actividad;
     static StartScreen inicio;
+    static PreguntaPersonalidad pregunta;
     static Ayuda aprender;
     static boolean trigger, lvlup, lvldwn;
     static boolean calculo;
     public static void main(String[] args) throws Exception {
         long[] respuestas;
+        pregunta = new PreguntaPersonalidad();
         datos = new Datos(1);
         aprender = new Ayuda(trigger);
         inicio = new StartScreen();

@@ -34,7 +34,7 @@ public class Actividad extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //this.setContentPane(fondo);
         pos = r.nextInt(0,9 - Main.n);
-        palabra.setText(Datos.palabras.get(pos));
+        palabra.setText(Main.datos.palabras.get(pos));
         StartScreen.nuevo = false;
         setVisible(true);
         continuarButton.setEnabled(false);
@@ -72,13 +72,13 @@ public class Actividad extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pressedc = true;
-                if (Datos.palabras.size() == 0) {
+                if (Main.datos.palabras.size() == 0) {
                     Main.datos = new Datos(Main.difficulty);
                     Practica.palabras = Main.datos.palabras;
                     Practica.respuestas = Main.datos.respuestas;
                 }
-                pos = r.nextInt(0,Datos.palabras.size());
-                palabra.setText(Datos.palabras.get(pos));
+                pos = r.nextInt(0,Main.datos.palabras.size());
+                palabra.setText(Main.datos.palabras.get(pos));
                 respuesta.setText("");
                 Practica.tiempoAyudas = 0;
                 Main.actividad.ayudas.setText("Ayudas: " + Practica.tiempoAyudas/1000 + " s.");

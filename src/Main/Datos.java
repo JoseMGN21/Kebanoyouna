@@ -4,11 +4,15 @@ import java.util.List;
 
 public class Datos {
     ArrayList<String> respuestas;
-    static ArrayList<String> palabras;
+    ArrayList<String> palabras;
+    ArrayList<String[]> palabrasComparacion;
+    ArrayList<String[]> respuestasComparacion;
     boolean vacio;
     public Datos(int dificultad) {
         respuestas = new ArrayList<>();
         palabras = new ArrayList<>();
+        palabrasComparacion = new ArrayList<String[]>();
+        respuestasComparacion = new ArrayList<String[]>();
         if (dificultad == 1) {
             respuestas.add("aoi");
             respuestas.add("iie");
@@ -30,6 +34,34 @@ public class Datos {
             palabras.add("もも");
             palabras.add("つめ");
             palabras.add("その");
+            String[] palabras1 = {"わ","れ","ね","ゆ"};
+            palabrasComparacion.add(palabras1);
+            String[] respuestas1 = {"wa - Hiragana", "re - Hiragana", "ne - Hiragana", "yu - Hiragana"};
+            respuestasComparacion.add(respuestas1);
+            String[] palabras2 = {"ら","ち","を","り"};
+            palabrasComparacion.add(palabras2);
+            String[] respuestas2 = {"ra - Hiragana", "chi - Hiragana", "wo - Hiragana", "ri - Hiragana"};
+            respuestasComparacion.add(respuestas2);
+            String[] palabras3 = {"ま","ほ","も","モ"};
+            palabrasComparacion.add(palabras3);
+            String[] respuestas3 = {"ma - Hiragana", "ho - Hiragana", "mo - Hiragana", "mo - Katakana"};
+            respuestasComparacion.add(respuestas3);
+            String[] palabras4 = {"た","に","け","い"};
+            palabrasComparacion.add(palabras4);
+            String[] respuestas4 = {"ta - Hiragana", "ni - Hiragana", "ke - Hiragana", "i - Hiragana"};
+            respuestasComparacion.add(respuestas4);
+            String[] palabras5 = {"さ","き","は","ち"};
+            palabrasComparacion.add(palabras5);
+            String[] respuestas5 = {"sa - Hiragana", "ki - Hiragana", "ha - Hiragana", "chi - Hiragana"};
+            respuestasComparacion.add(respuestas5);
+            String[] palabras6 = {"と","こ","て","ト"};
+            palabrasComparacion.add(palabras6);
+            String[] respuestas6 = {"to - Hiragana", "ko - Hiragana", "te - Hiragana", "to - Katakana"};
+            respuestasComparacion.add(respuestas6);
+            String[] palabras7 = {"あ","お","す","む"};
+            palabrasComparacion.add(palabras7);
+            String[] respuestas7 = {"a - Hiragana", "o - Hiragana", "su - Hiragana", "mu - Hiragana"};
+            respuestasComparacion.add(respuestas7);
             //vacio = false;
         } else if (dificultad == 2) {
             respuestas.add("kotoba");
