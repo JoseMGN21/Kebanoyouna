@@ -29,5 +29,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="json" level="application" />
+    <orderEntry type="library" name="github.bastiaanjansen.uribuilder.java" level="application" />
   </component>
 </module>

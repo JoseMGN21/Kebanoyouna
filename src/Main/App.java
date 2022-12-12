@@ -10,8 +10,8 @@ import java.net.URLEncoder;
 
 class App {
 	public static String prediccion(String rasgo, String texto) {
-
 		String url = "http://127.0.0.1:5000/persontext/" + rasgo +"/" + URLEncoder.encode(texto);
+		System.out.println(url);
 		String respuesta = "";
 		try {
 			respuesta = peticionHttpGet(url);

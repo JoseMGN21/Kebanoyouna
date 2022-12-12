@@ -9,7 +9,7 @@ public class StartScreen extends JFrame{
     private JButton aprenderButton;
     private JPanel startPanel;
     //FondoPanel fondo = new FondoPanel();
-    public boolean pressedi, presseda;
+    public boolean pressedi, presseda, act1, act2;
     public static boolean nuevo;
 
     public StartScreen(){
@@ -18,12 +18,18 @@ public class StartScreen extends JFrame{
         setTitle("Bienvenido");
         setSize(550,300);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        //this.setContentPane(fondo);
-        setVisible(true);
-        //setIconImage();
+        setVisible(false);
         iniciarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(Main.pregunta.responsabilidad && !Main.pregunta.apertura) {
+                    act1 = true;
+                    act2 = false;
+                }
+                else {
+                    act1 = false;
+                    act2 = true;
+                }
                 pressedi = true;
                 setVisible(false);
             }

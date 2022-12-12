@@ -11,7 +11,7 @@ public class PreguntaPersonalidad extends JFrame {
     private JButton enviarButton;
     private JProgressBar barraPalabras;
 
-    Boolean responsabilidad, neuroticismo, amabilidad, sociabilidad, apertura;
+    public Boolean responsabilidad, neuroticismo, amabilidad, sociabilidad, apertura;
 
 
     public PreguntaPersonalidad() {
@@ -38,7 +38,7 @@ public class PreguntaPersonalidad extends JFrame {
         enviarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            String texto = barraPalabras.getString();
+            String texto = textoRespuesta.getText();
             if(Objects.equals(App.prediccion("neuroticismo", texto), "Si")){
                 neuroticismo = true;
             } else neuroticismo = false;
@@ -59,6 +59,8 @@ public class PreguntaPersonalidad extends JFrame {
             System.out.println("Apertura: " + apertura);
             System.out.println("Sociabilidad: " + sociabilidad);
             System.out.println("Neuroticismo: " + neuroticismo);
+            Main.inicio.setVisible(true);
+            setVisible(false);
             }
         });
         barraPalabras.addMouseListener(new MouseAdapter() {

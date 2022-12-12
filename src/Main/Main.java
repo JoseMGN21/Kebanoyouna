@@ -1,5 +1,5 @@
 package Main;
-import java.util.Scanner;
+
 import java.util.Random;
 
 public class Main {
@@ -14,6 +14,7 @@ public class Main {
     static StartScreen inicio;
     static PreguntaPersonalidad pregunta;
     static Ayuda aprender;
+    static ComparacionKanas comparacion;
     static boolean trigger, lvlup, lvldwn;
     static boolean calculo;
     public static void main(String[] args) throws Exception {
@@ -23,16 +24,17 @@ public class Main {
         aprender = new Ayuda(trigger);
         inicio = new StartScreen();
         inicio.nuevo = true;
-        while(!inicio.pressedi) {
+        while (!inicio.pressedi) {
             Thread.sleep(200);
         }
-        while (inicio.pressedi){
-            //for (n = 0 ; n<=9 ; n++) {
+        if (inicio.act1) {
+            while (inicio.pressedi) {
+                //for (n = 0 ; n<=9 ; n++) {
                 if (inicio.nuevo)
                     actividad = new Actividad();
                 if (elo <= 35) {
                     difficulty = 1;
-                    if(lvldwn) {
+                    if (lvldwn) {
                         datos = new Datos(difficulty);
                         lvldwn = false;
                     }
@@ -41,7 +43,7 @@ public class Main {
                 } else {
                     if (elo <= 70) {
                         difficulty = 2;
-                        if(lvlup || lvldwn) {
+                        if (lvlup || lvldwn) {
                             datos = new Datos(difficulty);
                             lvlup = false;
                             lvldwn = false;
@@ -50,7 +52,7 @@ public class Main {
                         regulador = -5;
                     } else {
                         difficulty = 3;
-                        if(lvlup || lvldwn) {
+                        if (lvlup || lvldwn) {
                             datos = new Datos(difficulty);
                             lvldwn = false;
                             lvlup = false;
@@ -64,10 +66,10 @@ public class Main {
                     System.out.println(respuestas[1]);
                     System.out.println(respuestas[2] / 1000);
                     nelo = elo + (Fuzzy.fuzzify(respuestas[1], respuestas[0], respuestas[2] / 1000)) / 10 + regulador;
-                    if ((nelo >= 35 && elo < 35 )||(nelo >= 70 && elo < 70))
+                    if ((nelo >= 35 && elo < 35) || (nelo >= 70 && elo < 70))
                         lvlup = true;
                     //else lvlup = false;
-                    if ((nelo < 35 && elo >= 35 )||(nelo < 70 && elo >= 70))
+                    if ((nelo < 35 && elo >= 35) || (nelo < 70 && elo >= 70))
                         lvldwn = true;
                     //else lvldwn = false;
                     elo = nelo;
@@ -81,5 +83,72 @@ public class Main {
                 System.out.println(elo);
             }
         }
+        else if (inicio.act2) {
+            while (inicio.pressedi) {
+                if (inicio.nuevo)
+                    comparacion = new ComparacionKanas();
+                if (elo <= 35) {
+                    difficulty = 1;
+                    if (lvldwn) {
+                        datos = new Datos(difficulty);
+                        lvldwn = false;
+                    }
+                    respuestas = Practica.comparacionfacil();
+                    regulador = -2.5;
+                } else {
+                    if (elo <= 70) {
+                        difficulty = 2;
+                        if (lvlup || lvldwn) {
+                            datos = new Datos(difficulty);
+                            lvlup = false;
+                            lvldwn = false;
+                        }
+                        respuestas = Practica.comparacionmedio();
+                        regulador = -6;
+                    } else {
+                        difficulty = 3;
+                        if (lvlup || lvldwn) {
+                            datos = new Datos(difficulty);
+                            lvldwn = false;
+                            lvlup = false;
+                        }
+                        respuestas = Practica.comparaciondificil();
+                        regulador = -9;
+                    }
+                }
+                if (respuestas[1] < 5) {
+                    System.out.println(respuestas[0]);
+                    System.out.println(respuestas[1]);
+                    System.out.println(respuestas[2] / 1000);
+                    nelo = elo + (Fuzzy.fuzzify(respuestas[1], respuestas[0], respuestas[2] / 1000)) / 10 + regulador;
+                    if ((nelo >= 35 && elo < 35) || (nelo >= 70 && elo < 70))
+                        lvlup = true;
+                    //else lvlup = false;
+                    if ((nelo < 35 && elo >= 35) || (nelo < 70 && elo >= 70))
+                        lvldwn = true;
+                    //else lvldwn = false;
+                    elo = nelo;
+                } else
+                    elo = elo - 15;
+                if (elo >= 100)
+                    elo = 100;
+                if (elo <= 0)
+                    elo = 0;
+                calculo = true;
+                System.out.println(elo);
+                if(elo < 35){
+                    comparacion.eloBar.setValue((int) elo);
+                } else if (elo < 70) {
+                    comparacion.eloBar.setValue((int) elo-35);
+                } else {
+                    comparacion.eloBar.setValue((int) elo-70);
+                }
+                Practica.errores = 0;
+                comparacion.errores = 0;
+                Practica.tiempoAyudas = 0;
+                comparacion.correct = false;
+            }
+        }
+        }
+    }
 
-}

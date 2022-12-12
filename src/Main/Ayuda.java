@@ -1,7 +1,6 @@
 package Main;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -32,12 +31,19 @@ public class Ayuda extends JFrame {
                 Main.inicio.presseda = false;
                 Main.inicio.setVisible(true);
                 setVisible(false);}
-                else{
+                else if (Actividad.trigger){
                     Practica.tiempoAyudas = Practica.tiempoAyudas + (System.currentTimeMillis() - Practica.startTimeA);
                     Main.actividad.ayudas.setText("Ayudas: " + Practica.tiempoAyudas/1000 + " s.");
                     if (Practica.tiempoAyudas > 60000)
                         Practica.tiempoAyudas = 60000;
                     Main.actividad.setVisible(true);
+                    setVisible(false);
+                } else if (ComparacionKanas.trigger){
+                    Practica.tiempoAyudas = Practica.tiempoAyudas + (System.currentTimeMillis() - Practica.startTimeA);
+                    //Main.comparacion.ayudas.setText("Ayudas: " + Practica.tiempoAyudas/1000 + " s.");
+                    if (Practica.tiempoAyudas > 60000)
+                        Practica.tiempoAyudas = 60000;
+                    Main.comparacion.setVisible(true);
                     setVisible(false);
                 }
             }

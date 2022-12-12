@@ -20,7 +20,7 @@ public class Actividad extends JFrame {
     public static String resp;
     public static boolean correct;
     public int pos;
-    public static boolean maxerr;
+    public static boolean trigger;
     Random r = new Random();
     //FondoPanel fondo = new FondoPanel();
 

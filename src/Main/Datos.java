@@ -1,6 +1,6 @@
 package Main;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class Datos {
     ArrayList<String> respuestas;
@@ -84,6 +84,34 @@ public class Datos {
             palabras.add("げつようび");
             palabras.add("パソコン");
             palabras.add("カメラ");
+            String[] palabras1 = {"ン","ソ","ツ","ノ"};
+            palabrasComparacion.add(palabras1);
+            String[] respuestas1 = {"n - Katakana", "so - Katakana", "tsu - Katakana", "no - Katakana"};
+            respuestasComparacion.add(respuestas1);
+            String[] palabras2 = {"か","カ","ク","ん"};
+            palabrasComparacion.add(palabras2);
+            String[] respuestas2 = {"ka - Hiragana", "ka - Katakana", "ku - Katakana", "n - Hiragana"};
+            respuestasComparacion.add(respuestas2);
+            String[] palabras3 = {"ミ","き","キ","チ"};
+            palabrasComparacion.add(palabras3);
+            String[] respuestas3 = {"mi - Katakana", "ki - Hiragana", "ki - Katakana", "chi - Katakana"};
+            respuestasComparacion.add(respuestas3);
+            String[] palabras4 = {"ミ","に","ニ","エ"};
+            palabrasComparacion.add(palabras4);
+            String[] respuestas4 = {"mi - Katakana", "ni - Hiragana", "ni - Katakana", "e - Katakana"};
+            respuestasComparacion.add(respuestas4);
+            String[] palabras5 = {"め","ぬ","の","つ"};
+            palabrasComparacion.add(palabras5);
+            String[] respuestas5 = {"me - Hiragana", "nu - Hiragana", "no - Hiragana", "tsu - Hiragana"};
+            respuestasComparacion.add(respuestas5);
+            String[] palabras6 = {"ろ","る","そ","ふ"};
+            palabrasComparacion.add(palabras6);
+            String[] respuestas6 = {"ro - Hiragana", "ru - Hiragana", "so - Hiragana", "fu - Hiragana"};
+            respuestasComparacion.add(respuestas6);
+            String[] palabras7 = {"シ","ツ","イ","ア"};
+            palabrasComparacion.add(palabras7);
+            String[] respuestas7 = {"shi - Katakana", "tsu - Katakana", "i - Katakana", "a - Katakana"};
+            respuestasComparacion.add(respuestas7);
             //vacio = false;
         } else {
             respuestas.add("hanbaagaa");
@@ -106,6 +134,34 @@ public class Datos {
             palabras.add("じどうはんばいき");
             palabras.add("なつやすみ");
             palabras.add("サンドイッチ");
+            String[] palabras1 = {"ワ","ラ","テ","ウ"};
+            palabrasComparacion.add(palabras1);
+            String[] respuestas1 = {"wa - Katakana", "ra - Katakana", "te - Katakana", "u - Katakana"};
+            respuestasComparacion.add(respuestas1);
+            String[] palabras2 = {"や","ヤ","ュ","よ"};
+            palabrasComparacion.add(palabras2);
+            String[] respuestas2 = {"ya - Hiragana", "ya - Katakana", "yu - Katakana", "yo - Hiragana"};
+            respuestasComparacion.add(respuestas2);
+            String[] palabras3 = {"マ","ム","ネ","ケ"};
+            palabrasComparacion.add(palabras3);
+            String[] respuestas3 = {"ma - Katakana", "mu - Katakana", "ne - Katakana", "ke - Katakana"};
+            respuestasComparacion.add(respuestas3);
+            String[] palabras4 = {"フ","ヲ","ヌ","タ"};
+            palabrasComparacion.add(palabras4);
+            String[] respuestas4 = {"fu - Katakana", "wo - Katakana", "nu - Katakana", "ta - Katakana"};
+            respuestasComparacion.add(respuestas4);
+            String[] palabras5 = {"ス","ク","ウ","フ"};
+            palabrasComparacion.add(palabras5);
+            String[] respuestas5 = {"su - Katakana", "ku - Katakana", "u - Katakana", "fu - Katakana"};
+            respuestasComparacion.add(respuestas5);
+            String[] palabras6 = {"コ","ロ","ヨ","ュ"};
+            palabrasComparacion.add(palabras6);
+            String[] respuestas6 = {"ko - Katakana", "ro - Katakana", "yo - Katakana", "yu - Katakana"};
+            respuestasComparacion.add(respuestas6);
+            /*String[] palabras7 = {"あ","お","す","む"};
+            palabrasComparacion.add(palabras7);
+            String[] respuestas7 = {"a - Hiragana", "o - Hiragana", "su - Hiragana", "mu - Hiragana"};
+            respuestasComparacion.add(respuestas7);*/
             //vacio = false;
         }
     }
