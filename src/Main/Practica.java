@@ -21,15 +21,6 @@ public class Practica {
         palabras = Main.datos.palabras;
         respuestas = Main.datos.respuestas;
         startTime = System.currentTimeMillis();
-        pos = r1.nextInt(0,7 - Main.n);
-        pos2 = r2.nextInt(0,3);
-        int bound = Main.datos.respuestasComparacion.get(pos)[pos2].indexOf("-");
-        Main.comparacion.palabra.setText(Main.datos.respuestasComparacion.get(pos)[pos2].substring(0,bound));
-        Main.comparacion.tipoKana.setText(Main.datos.respuestasComparacion.get(pos)[pos2].substring(bound+2,Main.datos.respuestasComparacion.get(pos)[pos2].length()));
-        Main.comparacion.button1.setText(Main.datos.palabrasComparacion.get(pos)[0]);
-        Main.comparacion.button2.setText(Main.datos.palabrasComparacion.get(pos)[1]);
-        Main.comparacion.button3.setText(Main.datos.palabrasComparacion.get(pos)[2]);
-        Main.comparacion.button4.setText(Main.datos.palabrasComparacion.get(pos)[3]);
         while(!Main.actividad.pressedc) {
            while (!Main.actividad.pressedr) {
                 Thread.sleep(200);

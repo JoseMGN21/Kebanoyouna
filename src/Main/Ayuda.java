@@ -45,6 +45,13 @@ public class Ayuda extends JFrame {
                         Practica.tiempoAyudas = 60000;
                     Main.comparacion.setVisible(true);
                     setVisible(false);
+                } else {
+                    Practica.tiempoAyudas = Practica.tiempoAyudas + (System.currentTimeMillis() - Practica.startTimeA);
+                    Main.actividad.ayudas.setText("Ayudas: " + Practica.tiempoAyudas/1000 + " s.");
+                    if (Practica.tiempoAyudas > 60000)
+                        Practica.tiempoAyudas = 60000;
+                    Main.actividad.setVisible(true);
+                    setVisible(false);
                 }
             }
         });

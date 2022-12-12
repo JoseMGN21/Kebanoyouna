@@ -22,13 +22,13 @@ public class StartScreen extends JFrame{
         iniciarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(Main.pregunta.responsabilidad && !Main.pregunta.apertura) {
-                    act1 = true;
-                    act2 = false;
-                }
-                else {
+                if(Main.pregunta.neuroticismo || Main.pregunta.responsabilidad) {
                     act1 = false;
                     act2 = true;
+                }
+                else {
+                    act1 = true;
+                    act2 = false;
                 }
                 pressedi = true;
                 setVisible(false);

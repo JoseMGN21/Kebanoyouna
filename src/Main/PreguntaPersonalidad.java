@@ -19,6 +19,7 @@ public class PreguntaPersonalidad extends JFrame {
         setLocation(420,210);
         setContentPane(respuestaPersonalidad);
         setBounds(300,200,550,300);
+        setTitle("¡Queremos conocerte!");
         setVisible(true);
         enviarButton.setEnabled(false);
         textoRespuesta.addKeyListener(new KeyAdapter() {
