@@ -1,6 +1,7 @@
 package Main;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
@@ -46,9 +47,14 @@ public class ComparacionKanas extends JFrame {
                     button2.setEnabled(true);
                     button3.setEnabled(true);
                     button4.setEnabled(true);
+                    button1.setBackground(new Color(65,0,59));
+                    button2.setBackground(new Color(65,0,59));
+                    button3.setBackground(new Color(65,0,59));
+                    button4.setBackground(new Color(65,0,59));
                 } else {
                     correct = false;
                     errores += 1;
+                    button1.setBackground(Color.gray);
                     button1.setEnabled(false);
                 }
             }
@@ -63,9 +69,14 @@ public class ComparacionKanas extends JFrame {
                     button2.setEnabled(true);
                     button3.setEnabled(true);
                     button4.setEnabled(true);
+                    button1.setBackground(new Color(65,0,59));
+                    button2.setBackground(new Color(65,0,59));
+                    button3.setBackground(new Color(65,0,59));
+                    button4.setBackground(new Color(65,0,59));
                 } else {
                     correct = false;
                     errores += 1;
+                    button2.setBackground(Color.gray);
                     button2.setEnabled(false);
                 }
             }
@@ -80,9 +91,14 @@ public class ComparacionKanas extends JFrame {
                     button2.setEnabled(true);
                     button3.setEnabled(true);
                     button4.setEnabled(true);
+                    button1.setBackground(new Color(65,0,59));
+                    button2.setBackground(new Color(65,0,59));
+                    button3.setBackground(new Color(65,0,59));
+                    button4.setBackground(new Color(65,0,59));
                 } else {
                     correct = false;
                     errores += 1;
+                    button3.setBackground(Color.gray);
                     button3.setEnabled(false);
                 }
             }
@@ -97,9 +113,14 @@ public class ComparacionKanas extends JFrame {
                     button2.setEnabled(true);
                     button3.setEnabled(true);
                     button4.setEnabled(true);
+                    button1.setBackground(new Color(65,0,59));
+                    button2.setBackground(new Color(65,0,59));
+                    button3.setBackground(new Color(65,0,59));
+                    button4.setBackground(new Color(65,0,59));
                 } else {
                     correct = false;
                     errores += 1;
+                    button4.setBackground(Color.gray);
                     button4.setEnabled(false);
                 }
             }
